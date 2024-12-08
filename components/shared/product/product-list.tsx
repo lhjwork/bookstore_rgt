@@ -16,12 +16,10 @@ const ProductList = ({ title, data }: { title: string; data: Product[] }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
-  // 현재 페이지에 해당하는 제품 목록을 계산합니다.
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentProducts = data.slice(indexOfFirstItem, indexOfLastItem);
 
-  // 페이지 수를 계산합니다.
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
   const handlePageChange = (pageNumber: number) => {
@@ -35,7 +33,7 @@ const ProductList = ({ title, data }: { title: string; data: Product[] }) => {
       {currentProducts.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {currentProducts.map((product: Product) => (
-            <ProductCard key={product.slug} product={product} />
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       ) : (
@@ -47,11 +45,7 @@ const ProductList = ({ title, data }: { title: string; data: Product[] }) => {
       <Pagination>
         <PaginationContent>
           <PaginationItem>
-            <PaginationPrevious
-              href="#"
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-            />
+            <PaginationPrevious href="#" onClick={() => handlePageChange(currentPage - 1)} />
           </PaginationItem>
           {[...Array(totalPages)].map((_, index) => (
             <PaginationItem key={index}>
@@ -61,11 +55,7 @@ const ProductList = ({ title, data }: { title: string; data: Product[] }) => {
             </PaginationItem>
           ))}
           <PaginationItem>
-            <PaginationNext
-              href="#"
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-            />
+            <PaginationNext href="#" onClick={() => handlePageChange(currentPage + 1)} />
           </PaginationItem>
         </PaginationContent>
       </Pagination>

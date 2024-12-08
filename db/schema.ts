@@ -1,10 +1,10 @@
-import { boolean, integer, numeric, pgTable, text, timestamp, uniqueIndex, uuid } from "drizzle-orm/pg-core";
+import { boolean, integer, numeric, pgTable, text, timestamp, uniqueIndex } from "drizzle-orm/pg-core";
 
 // PRODUCTS
 export const products = pgTable(
   "product",
   {
-    id: uuid("id").defaultRandom().primaryKey().notNull(),
+    id: integer("id").notNull().default(0),
     name: text("name").notNull(),
     slug: text("slug").notNull(),
     category: text("category").notNull(),
@@ -16,7 +16,6 @@ export const products = pgTable(
     rating: numeric("rating", { precision: 3, scale: 2 }).notNull().default("0"),
     numReviews: integer("numReviews").notNull().default(0),
     isFeatured: boolean("isFeatured").default(false).notNull(),
-    banner: text("banner"),
     createdAt: timestamp("createdAt").defaultNow().notNull(),
   },
   (table) => {

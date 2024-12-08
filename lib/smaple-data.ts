@@ -1,22 +1,7 @@
-import { hashSync } from "bcrypt-ts-edge";
-
 const sampleData = {
-  users: [
-    {
-      name: "John",
-      email: "admin@example.com",
-      password: hashSync("123456", 10),
-      role: "admin",
-    },
-    {
-      name: "Jane",
-      email: "jane@example.com",
-      password: hashSync("123456", 10),
-      role: "user",
-    },
-  ],
   products: [
     {
+      id: 1,
       name: "판타지 소설",
       slug: "/fantasy-novel-1",
       category: "Books",
@@ -28,9 +13,10 @@ const sampleData = {
       stock: 5,
       description: "신비로운 판타지의 세계로",
       isFeatured: true,
-      banner: "/assets/images/banner-1.jpeg",
+      createdAt: new Date(),
     },
     {
+      id: 2,
       name: "테니스 교실",
       slug: "/tennis-class-1",
       category: "sports",
@@ -42,9 +28,10 @@ const sampleData = {
       stock: 10,
       description: "테니스 교실에서 배우는 테니스의 모든 것",
       isFeatured: true,
-      banner: "/assets/images/banner-2.jpeg",
+      createdAt: new Date(),
     },
     {
+      id: 3,
       name: "하하엄마의 하하하",
       slug: "/haha-mom-1",
       category: "Track Pants",
@@ -55,8 +42,11 @@ const sampleData = {
       numReviews: 3,
       stock: 0,
       description: "재미있는 책 ",
+      isFeatured: true,
+      createdAt: new Date(),
     },
     {
+      id: 4,
       name: "오늘의 요리",
       slug: "/cooking-today-1",
       category: "Track Pants",
@@ -67,8 +57,11 @@ const sampleData = {
       numReviews: 5,
       stock: 10,
       description: "오늘의 요리는 오늘의 요리를 소개합니다. 맛있는 요리를 만들어보세요",
+      isFeatured: true,
+      createdAt: new Date(),
     },
     {
+      id: 5,
       name: "판타지 소설",
       slug: "/fantasy-novel-2",
       category: "Books",
@@ -80,9 +73,10 @@ const sampleData = {
       stock: 5,
       description: "신비로운 판타지의 세계로",
       isFeatured: true,
-      banner: "/assets/images/banner-1.jpeg",
+      createdAt: new Date(),
     },
     {
+      id: 6,
       name: "테니스 교실",
       slug: "/tennis-class-2",
       category: "sports",
@@ -94,9 +88,10 @@ const sampleData = {
       stock: 10,
       description: "테니스 교실에서 배우는 테니스의 모든 것",
       isFeatured: true,
-      banner: "/assets/images/banner-2.jpeg",
+      createdAt: new Date(),
     },
     {
+      id: 7,
       name: "하하엄마의 하하하",
       slug: "/haha-mom-2",
       category: "Track Pants",
@@ -106,9 +101,12 @@ const sampleData = {
       rating: "4.9",
       numReviews: 3,
       stock: 0,
+      isFeatured: true,
       description: "재미있는 책 ",
+      createdAt: new Date(),
     },
     {
+      id: 8,
       name: "오늘의 요리",
       slug: "/cooking-today-2",
       category: "Track Pants",
@@ -118,9 +116,12 @@ const sampleData = {
       rating: "3.6",
       numReviews: 5,
       stock: 10,
+      isFeatured: true,
       description: "오늘의 요리는 오늘의 요리를 소개합니다. 맛있는 요리를 만들어보세요",
+      createdAt: new Date(),
     },
     {
+      id: 9,
       name: "판타지 소설",
       slug: "/fantasy-novel-3",
       category: "Books",
@@ -132,9 +133,10 @@ const sampleData = {
       stock: 5,
       description: "신비로운 판타지의 세계로",
       isFeatured: true,
-      banner: "/assets/images/banner-1.jpeg",
+      createdAt: new Date(),
     },
     {
+      id: 10,
       name: "판타지 소설",
       slug: "/fantasy-novel-4",
       category: "Books",
@@ -146,9 +148,10 @@ const sampleData = {
       stock: 5,
       description: "신비로운 판타지의 세계로",
       isFeatured: true,
-      banner: "/assets/images/banner-1.jpeg",
+      createdAt: new Date(),
     },
     {
+      id: 11,
       name: "테니스 교실",
       slug: "/tennis-class-3",
       category: "sports",
@@ -160,9 +163,10 @@ const sampleData = {
       stock: 10,
       description: "테니스 교실에서 배우는 테니스의 모든 것",
       isFeatured: true,
-      banner: "/assets/images/banner-2.jpeg",
+      createdAt: new Date(),
     },
     {
+      id: 12,
       name: "테니스 교실",
       slug: "/tennis-class-4",
       category: "sports",
@@ -174,9 +178,10 @@ const sampleData = {
       stock: 10,
       description: "테니스 교실에서 배우는 테니스의 모든 것",
       isFeatured: true,
-      banner: "/assets/images/banner-2.jpeg",
+      createdAt: new Date(),
     },
     {
+      id: 13,
       name: "하하엄마의 하하하",
       slug: "/haha-mom-3",
       category: "Track Pants",
@@ -186,9 +191,12 @@ const sampleData = {
       rating: "4.9",
       numReviews: 3,
       stock: 0,
+      isFeatured: true,
       description: "재미있는 책 ",
+      createdAt: new Date(),
     },
     {
+      id: 14,
       name: "하하엄마의 하하하",
       slug: "/haha-mom-4",
       category: "Track Pants",
@@ -198,9 +206,12 @@ const sampleData = {
       rating: "4.9",
       numReviews: 3,
       stock: 0,
+      isFeatured: true,
       description: "재미있는 책 ",
+      createdAt: new Date(),
     },
     {
+      id: 15,
       name: "오늘의 요리",
       slug: "/cooking-today-3",
       category: "Track Pants",
@@ -210,9 +221,12 @@ const sampleData = {
       rating: "3.6",
       numReviews: 5,
       stock: 10,
+      isFeatured: true,
       description: "오늘의 요리는 오늘의 요리를 소개합니다. 맛있는 요리를 만들어보세요",
+      createdAt: new Date(),
     },
     {
+      id: 16,
       name: "오늘의 요리",
       slug: "/cooking-today-4",
       category: "Track Pants",
@@ -222,9 +236,13 @@ const sampleData = {
       rating: "3.6",
       numReviews: 5,
       stock: 10,
+      isFeatured: true,
       description: "오늘의 요리는 오늘의 요리를 소개합니다. 맛있는 요리를 만들어보세요",
+      createdAt: new Date(),
     },
   ],
 };
+
+export const products = sampleData.products;
 
 export default sampleData;
